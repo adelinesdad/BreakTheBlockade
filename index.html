@@ -1,0 +1,185 @@
+<html>
+<head>
+    <link href="index.css" rel="stylesheet"/>
+    <script src="index.js"></script>
+    <title>Break the Blockade</title>
+</head>
+<body onload="startGame()">
+    <img src="Images/Board.png" class="board-image"/>
+
+    <div class="game-info" id="game-info">
+        <table>
+            <tr>
+                <td>Turn:</td>
+                <td id="game-info-turn"></td>
+            </tr>
+            <tr>
+                <td>Moves Left:</td>
+                <td id="game-info-moves-left"></td>
+            </tr>
+            <tr>
+                <td>Rounds Remaining:</td>
+                <td id="game-info-rounds-remaining"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="game-instructions">
+        <p>Welcome to Break the Blockade!</p>
+        <p>The Red King is under siege by the Blue Army. 
+            The Red Battalions must reach their King to provide the kingdom with provisions to outlast the seige.</p>
+        <p>Red wins if:
+            <ul>
+                <li>One of the red pieces reaches the King piece (piece with the double black border) within 10 turns.</li>
+            </ul>
+        </p>
+        <p>Blue wins if:
+            <ul>
+                <li>No red piece reache the King piece withing ten turns, or</li>
+                <li>All red pieces have been captured or immobilized</li>
+            </ul>
+        </p>
+        <p>Movement rules:
+            <ul>
+                <li>Pawns can't move into or through spaces occupied by other pieces, except for Red pieces that can move onto the King piece to win the game.</li>
+                <li>Red:
+                    <ul>
+                        <li>Red moves first.</li>
+                        <li>Red can move a total of 3 spaces on each turn, distributed among 1, 2, or 3 pieces.</li>
+                        <li>The King piece can only move within the Castle (the center gray area)</li>
+                    </ul>
+                </li>
+                <li>Blue:
+                    <ul>
+                        <li>Blue can move only 1 piece, and can only move it 1 space.</li>
+                        <li>Blue pieces cannot move into the Castle</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <p>Immobility: If a single red piece is adjacent to a single blue piece which is not adjacent to another other red piece, the red piece cannot move.</p>
+        <p>Release: If a single blue piece is adjacent to 2+ red pieces, all the red pieces can move.</p>
+        <p>Capture: If 2 blue pieces are both adjacent to a single red piece, the red piece is captured and removed from the board.</p>
+        <p>How to use this web-based simulator:
+            <ul>
+                <li>Click a piece to select it</li>
+                <li>Then click the location you want to move it to</li>
+                <li>Due to technical limitations, you can only move a piece in a straight line. However, if you want the piece to turn, just move it to one space, then click it again and move it again in a different direction.</li>
+                <li>The panel above will indicate which player's turn it is, how many moves they have left, and how many rounds remain.</li>
+            </ul>
+        </p>
+    </div>
+
+    <a class="cell r01 c06" id="r1c6" onclick="onClick(1, 6);"></a>
+
+    <a class="cell r02 c05" id="r2c5"  onclick="onClick(2, 5);"></a>
+    <a class="cell r02 c07" id="r2c7"  onclick="onClick(2, 7);"></a>
+
+    <a class="cell r03 c04" id="r3c4"  onclick="onClick(3, 4);"></a>
+    <a class="cell r03 c06" id="r3c6" onclick="onClick(3, 6);"></a>
+    <a class="cell r03 c08" id="r3c8" onclick="onClick(3, 8);"></a>
+
+    <a class="cell r04 c03" id="r4c3" onclick="onClick(4, 3);"></a>
+    <a class="cell r04 c05" id="r4c5" onclick="onClick(4, 5);"></a>
+    <a class="cell r04 c07" id="r4c7" onclick="onClick(4, 7);"></a>
+    <a class="cell r04 c09" id="r4c9" onclick="onClick(4, 9);"></a>
+
+    <a class="cell r05 c02" id="r5c2" onclick="onClick(5, 2);"></a>
+    <a class="cell r05 c04" id="r5c4" onclick="onClick(5, 4);"></a>
+    <a class="cell r05 c06" id="r5c6" onclick="onClick(5, 6);"></a>
+    <a class="cell r05 c08" id="r5c8" onclick="onClick(5, 8);"></a>
+    <a class="cell r05 c10" id="r5c10" onclick="onClick(5, 10);"></a>
+
+    <a class="cell r06 c01" id="r6c1" onclick="onClick(6, 1);"></a>
+    <a class="cell r06 c03" id="r6c3" onclick="onClick(6, 3);"></a>
+    <a class="cell r06 c05" id="r6c5" onclick="onClick(6, 5);"></a>
+    <a class="cell r06 c07" id="r6c7" onclick="onClick(6, 7);"></a>
+    <a class="cell r06 c09" id="r6c9" onclick="onClick(6, 9);"></a>
+    <a class="cell r06 c11" id="r6c11" onclick="onClick(6, 11);"></a>
+
+    <a class="cell r07 c02" id="r7c2" onclick="onClick(7, 2);"></a>
+    <a class="cell r07 c04" id="r7c4" onclick="onClick(7, 4);"></a>
+    <a class="cell r07 c06" id="r7c6" onclick="onClick(7, 6);"></a>
+    <a class="cell r07 c08" id="r7c8" onclick="onClick(7, 8);"></a>
+    <a class="cell r07 c10" id="r7c10" onclick="onClick(7, 10);"></a>
+
+    <a class="cell r08 c01" id="r8c1" onclick="onClick(8, 1);"></a>
+    <a class="cell r08 c03" id="r8c3" onclick="onClick(8, 3);"></a>
+    <a class="cell r08 c05" id="r8c5" onclick="onClick(8, 5);"></a>
+    <a class="cell r08 c07" id="r8c7" onclick="onClick(8, 7);"></a>
+    <a class="cell r08 c09" id="r8c9" onclick="onClick(8, 9);"></a>
+    <a class="cell r08 c11" id="r8c11" onclick="onClick(8, 11);"></a>
+
+    <a class="cell r09 c02" id="r9c2" onclick="onClick(9, 2);"></a>
+    <a class="cell r09 c04" id="r9c4" onclick="onClick(9, 4);"></a>
+    <a class="cell r09 c06" id="r9c6" onclick="onClick(9, 6);"></a>
+    <a class="cell r09 c08" id="r9c8" onclick="onClick(9, 8);"></a>
+    <a class="cell r09 c10" id="r9c10" onclick="onClick(9, 10);"></a>
+
+    <a class="cell r10 c01" id="r10c1" onclick="onClick(10, 1);"></a>
+    <a class="cell r10 c03" id="r10c3" onclick="onClick(10, 3);"></a>
+    <a class="cell r10 c05" id="r10c5" onclick="onClick(10, 5);"></a>
+    <a class="cell r10 c07" id="r10c7" onclick="onClick(10, 7);"></a>
+    <a class="cell r10 c09" id="r10c9" onclick="onClick(10, 9);"></a>
+    <a class="cell r10 c11" id="r10c11" onclick="onClick(10, 11);"></a>
+
+    <a class="cell r11 c02" id="r11c2" onclick="onClick(11, 2);"></a>
+    <a class="cell r11 c04" id="r11c4" onclick="onClick(11, 4);"></a>
+    <a class="cell r11 c06" id="r11c6" onclick="onClick(11, 6);"></a>
+    <a class="cell r11 c08" id="r11c8" onclick="onClick(11, 8);"></a>
+    <a class="cell r11 c10" id="r11c10" onclick="onClick(11, 10);"></a>
+
+    <a class="cell r12 c01" id="r12c1" onclick="onClick(12, 1);"></a>
+    <a class="cell r12 c03" id="r12c3" onclick="onClick(12, 3);"></a>
+    <a class="cell r12 c05" id="r12c5" onclick="onClick(12, 5);"></a>
+    <a class="cell r12 c07" id="r12c7" onclick="onClick(12, 7);"></a>
+    <a class="cell r12 c09" id="r12c9" onclick="onClick(12, 9);"></a>
+    <a class="cell r12 c11" id="r12c11" onclick="onClick(12, 11);"></a>
+
+    <a class="cell r13 c02" id="r13c2" onclick="onClick(13, 2);"></a>
+    <a class="cell r13 c04" id="r13c4" onclick="onClick(13, 4);"></a>
+    <a class="cell r13 c06" id="r13c6" onclick="onClick(13, 6);"></a>
+    <a class="cell r13 c08" id="r13c8" onclick="onClick(13, 8);"></a>
+    <a class="cell r13 c10" id="r13c10" onclick="onClick(13, 10);"></a>
+
+    <a class="cell r14 c01" id="r14c1" onclick="onClick(14, 1);"></a>
+    <a class="cell r14 c03" id="r14c3" onclick="onClick(14, 3);"></a>
+    <a class="cell r14 c05" id="r14c5" onclick="onClick(14, 5);"></a>
+    <a class="cell r14 c07" id="r14c7" onclick="onClick(14, 7);"></a>
+    <a class="cell r14 c09" id="r14c9" onclick="onClick(14, 9);"></a>
+    <a class="cell r14 c11" id="r14c11" onclick="onClick(14, 11);"></a>
+
+    <a class="cell r15 c02" id="r15c2" onclick="onClick(15, 2);"></a>
+    <a class="cell r15 c04" id="r15c4" onclick="onClick(15, 4);"></a>
+    <a class="cell r15 c06" id="r15c6" onclick="onClick(15, 6);"></a>
+    <a class="cell r15 c08" id="r15c8" onclick="onClick(15, 8);"></a>
+    <a class="cell r15 c10" id="r15c10" onclick="onClick(15, 10);"></a>
+
+    <a class="cell r16 c01" id="r16c1" onclick="onClick(16, 1);"></a>
+    <a class="cell r16 c03" id="r16c3" onclick="onClick(16, 3);"></a>
+    <a class="cell r16 c05" id="r16c5" onclick="onClick(16, 5);"></a>
+    <a class="cell r16 c07" id="r16c7" onclick="onClick(16, 7);"></a>
+    <a class="cell r16 c09" id="r16c9" onclick="onClick(16, 9);"></a>
+    <a class="cell r16 c11" id="r16c11" onclick="onClick(16, 11);"></a>
+
+    <a class="cell r17 c02" id="r17c2" onclick="onClick(17, 2);"></a>
+    <a class="cell r17 c04" id="r17c4" onclick="onClick(17, 4);"></a>
+    <a class="cell r17 c06" id="r17c6" onclick="onClick(17, 6);"></a>
+    <a class="cell r17 c08" id="r17c8" onclick="onClick(17, 8);"></a>
+    <a class="cell r17 c10" id="r17c10" onclick="onClick(17, 10);"></a>
+
+    <a class="cell r18 c03" id="r18c3" onclick="onClick(18, 3);"></a>
+    <a class="cell r18 c05" id="r18c5" onclick="onClick(18, 5);"></a>
+    <a class="cell r18 c07" id="r18c7" onclick="onClick(18, 7);"></a>
+    <a class="cell r18 c09" id="r18c9" onclick="onClick(18, 9);"></a>
+
+    <a class="cell r19 c04" id="r19c4" onclick="onClick(19, 4);"></a>
+    <a class="cell r19 c06" id="r19c6" onclick="onClick(19, 6);"></a>
+    <a class="cell r19 c08" id="r19c8" onclick="onClick(19, 8);"></a>
+
+    <a class="cell r20 c05" id="r20c5" onclick="onClick(20, 5);"></a>
+    <a class="cell r20 c07" id="r20c7" onclick="onClick(20, 7);"></a>
+
+    <a class="cell r21 c06" id="r21c6" onclick="onClick(21, 6);"></a>
+</body>
+</html>

@@ -1,0 +1,110 @@
+.board-image {
+    height: 1076px;
+    width: 932px;
+}
+
+.game-info {
+    display: block;
+    position: absolute;
+    width: 200px;
+    top: 50px;
+    left: 1000px;
+}
+
+.game-instructions {
+    display: block;
+    position: absolute;
+    width: 500px;
+    top: 150px;
+    left: 1000px;
+}
+
+.game-info.red {
+    background-color: red;
+}
+
+.game-info.red td {
+
+    color: black;
+}
+
+.game-info.blue {
+    background-color: blue;
+}
+
+.game-info.blue td {
+    color: white;
+}
+
+.cell {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: hand;
+    border-radius: 50%;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue.selected {
+    background-color: #000099;
+}
+
+.red.selected {
+    background-color: #990000;
+}
+
+.red.immobile {
+    background-color: #ff9999;
+}
+
+.king {
+    border: double 5px black;
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+
+.r01 { top: calc(2px + (46.6px * 01)); }
+.r02 { top: calc(2px + (46.6px * 02)); }
+.r03 { top: calc(2px + (46.6px * 03)); }
+.r04 { top: calc(2px + (46.6px * 04)); }
+.r05 { top: calc(2px + (46.6px * 05)); }
+.r06 { top: calc(2px + (46.6px * 06)); }
+.r07 { top: calc(2px + (46.6px * 07)); }
+.r08 { top: calc(2px + (46.6px * 08)); }
+.r09 { top: calc(2px + (46.6px * 09)); }
+.r10 { top: calc(2px + (46.6px * 10)); }
+.r11 { top: calc(2px + (46.6px * 11)); }
+.r12 { top: calc(2px + (46.6px * 12)); }
+.r13 { top: calc(2px + (46.6px * 13)); }
+.r14 { top: calc(2px + (46.6px * 14)); }
+.r15 { top: calc(2px + (46.6px * 15)); }
+.r16 { top: calc(2px + (46.6px * 16)); }
+.r17 { top: calc(2px + (46.6px * 17)); }
+.r18 { top: calc(2px + (46.6px * 18)); }
+.r19 { top: calc(2px + (46.6px * 19)); }
+.r20 { top: calc(2px + (46.6px * 20)); }
+.r21 { top: calc(2px + (46.6px * 21)); }
+
+
+.c01 { left: calc(-25px + (78px * 01)); }
+.c02 { left: calc(-25px + (78px * 02)); }
+.c03 { left: calc(-25px + (78px * 03)); }
+.c04 { left: calc(-25px + (78px * 04)); }
+.c05 { left: calc(-25px + (78px * 05)); }
+.c06 { left: calc(-25px + (78px * 06)); }
+.c07 { left: calc(-25px + (78px * 07)); }
+.c08 { left: calc(-25px + (78px * 08)); }
+.c09 { left: calc(-25px + (78px * 09)); }
+.c10 { left: calc(-25px + (78px * 10)); }
+.c11 { left: calc(-25px + (78px * 11)); }
+
+
